@@ -1,0 +1,2 @@
+rootProject.name='Łódzki Posłaniec'
+include ':app'

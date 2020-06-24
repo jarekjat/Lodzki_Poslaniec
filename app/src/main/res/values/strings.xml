@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Łódzki Posłaniec</string>
+    <string name="register_name">Imię</string>
+    <string name="register_last_name">Nazwisko</string>
+    <string name="register_street">Ulica</string>
+    <string name="register_city">Miasto</string>
+    <string name="register_flat_number">Nr mieszkania</string>
+    <string name="register_postal_code">Kod pocztowy</string>
+    <string name="register_building_number">Nr budynku</string>
+    <string name="register_password">Hasło</string>
+    <string name="register_password_repeat">Powtórz hasło</string>
+    <string name="register_button_submit">Zatwierdź</string>
+    <string name="email">E-Mail</string>
+</resources>
