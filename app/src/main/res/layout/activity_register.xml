@@ -89,6 +89,7 @@
         android:layout_below="@id/textViewRegisterPostalCode"
         android:background="@color/colorWhite"
         android:id="@+id/editTextRegisterPostalCode"
+        android:inputType="number"
         android:layout_marginLeft="20dp"
         android:textSize="20sp"
         android:paddingLeft="5dp"

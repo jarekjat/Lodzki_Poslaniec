@@ -3,21 +3,26 @@ package com.example.LodzkiPoslaniec
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
+import android.os.Handler
+import android.view.Window
+import android.view.WindowManager
 
 class MainActivity : AppCompatActivity() {
-        var buttonRegister: Button? = null;
+
+        private var splash_time_out: Long = 2000
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        window.requestFeature(Window.FEATURE_NO_TITLE)
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        //var handler: Handler = Handler()
         setContentView(R.layout.activity_main)
-        buttonRegister = findViewById(R.id.buttonRegister)
-        setOnClickListener()
+        Handler().postDelayed(Runnable {
+
+                var homeIntent:Intent = Intent(this@MainActivity, HomeActivity::class.java)
+                startActivity(homeIntent)
+                finish()
+             },splash_time_out)
+
     }
-    fun setOnClickListener(){
-        buttonRegister?.setOnClickListener(View.OnClickListener {
-           val intent :Intent = Intent(this@MainActivity,RegisterActivity::class.java)
-            startActivity(intent)
-        })
-    }
+
 }

@@ -11,4 +11,11 @@
     <string name="register_password_repeat">Powtórz hasło</string>
     <string name="register_button_submit">Zatwierdź</string>
     <string name="email">E-Mail</string>
+    <string name="report_damaged_city_property">Zgłoś uszkodzoną infrastrukturę</string>
+    <string name="call">Połącz z call center</string>
+    <string name="report_a_pothole">Zgłoś dziurę</string>
+    <string name="infrastructure">Infrastruktura</string>
+    <string name="send_motion">Wyślij wniosek</string>
+    <string name="cleaning_request">Prośba o sprzątanie</string>
+    <string name="call_permission_request">Zgoda jest potrzebna, aby wykonać połączenie telefoniczne. Zostaniesz połączony z miejskim call center</string>
 </resources>
