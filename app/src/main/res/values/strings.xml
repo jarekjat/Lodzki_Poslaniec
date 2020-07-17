@@ -3,7 +3,7 @@
     <string name="register_name">Imię</string>
     <string name="register_last_name">Nazwisko</string>
     <string name="register_street">Ulica</string>
-    <string name="register_city">Miasto</string>
+    <string name="register_city">Miejscowość</string>
     <string name="register_flat_number">Nr mieszkania</string>
     <string name="register_postal_code">Kod pocztowy</string>
     <string name="register_building_number">Nr budynku</string>
@@ -18,4 +18,8 @@
     <string name="send_motion">Wyślij wniosek</string>
     <string name="cleaning_request">Prośba o sprzątanie</string>
     <string name="call_permission_request">Zgoda jest potrzebna, aby wykonać połączenie telefoniczne. Zostaniesz połączony z miejskim call center</string>
+    <string name="call_permission_request_title">Potrzebna zgoda</string>
+    <string name="cancel">Odmów</string>
+    <string name="register_street_number">Numer</string>
+    <string name="marked_fields_required">Zaznaczone pola są wymagane</string>
 </resources>

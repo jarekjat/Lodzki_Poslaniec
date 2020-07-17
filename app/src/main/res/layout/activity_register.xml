@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,190 +8,294 @@
     android:backgroundTint="@color/colorBlueTransparent"
     android:backgroundTintMode="src_atop"
     tools:context=".RegisterActivity">
+
     <TextView
+        android:id="@+id/textViewName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register_name"
-        android:layout_marginTop="50dp"
-        android:id="@+id/textViewName"
-        android:layout_marginLeft="20dp"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/editTextName"
+        app:layout_constraintStart_toStartOf="@+id/editTextName"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <EditText
+        android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewName"
+        android:layout_marginTop="68dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/colorWhite"
         android:hint="@string/register_name"
         android:inputType="textCapWords"
-        android:background="@color/colorWhite"
-        android:id="@+id/editTextName"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_below="@+id/textViewName"
-        android:textSize="20sp"
         android:paddingLeft="5dp"
-        />
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-6dp" />
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/register_last_name"
-        android:layout_marginTop="15dp"
         android:id="@+id/textViewLastName"
-        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/editTextName"
-        />
+        android:text="@string/register_last_name"
+        app:layout_constraintBottom_toTopOf="@+id/editTextLastName"
+        app:layout_constraintStart_toStartOf="@+id/editTextLastName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/register_last_name"
-        android:layout_below="@+id/textViewLastName"
-        android:background="@color/colorWhite"
         android:id="@+id/editTextLastName"
-        android:layout_marginLeft="20dp"
-        android:inputType="textCapWords"
-        android:textSize="20sp"
-        android:layout_marginRight="20dp"
-        android:paddingLeft="5dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/register_street"
-        android:layout_marginTop="15dp"
-        android:id="@+id/textViewRegisterStreet"
-        android:layout_marginLeft="20dp"
-        android:layout_below="@+id/editTextLastName"
-        />
-    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/register_street"
-        android:layout_below="@id/textViewRegisterStreet"
-        android:id="@+id/editTextStreet"
-        android:background="@color/colorWhite"
+        android:layout_below="@+id/textViewLastName"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:inputType="textCapSentences"
-        android:textSize="20sp"
+        android:background="@color/colorWhite"
+        android:hint="@string/register_last_name"
+        android:inputType="textCapWords"
         android:paddingLeft="5dp"
-        />
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName"
+        tools:layout_editor_absoluteX="0dp" />
+
     <TextView
+        android:id="@+id/textViewRegisterStreet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register_postal_code"
-        android:layout_marginTop="15dp"
+        android:layout_below="@+id/editTextLastName"
+        android:text="@string/register_street"
+        app:layout_constraintBottom_toTopOf="@+id/editTextStreet"
+        app:layout_constraintStart_toStartOf="@+id/editTextStreet"
+        app:layout_constraintTop_toBottomOf="@+id/editTextLastName"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editTextStreet"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewRegisterStreet"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorWhite"
+        android:hint="@string/register_street"
+        android:inputType="textCapSentences"
+        android:paddingLeft="5dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextLastName" />
+
+    <TextView
+        android:id="@+id/textViewRegisterStreetNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextLastName"
+        android:layout_alignParentRight="true"
+        android:text="@string/register_street_number"
+        app:layout_constraintBottom_toTopOf="@+id/editTextStreetNumber"
+        app:layout_constraintStart_toStartOf="@+id/editTextStreetNumber"
+        app:layout_constraintTop_toBottomOf="@+id/editTextLastName"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editTextStreetNumber"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewRegisterStreet"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/colorWhite"
+        android:hint="@string/register_street_number"
+        android:inputType="number"
+        android:paddingLeft="5dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextLastName" />
+
+    <TextView
         android:id="@+id/textViewRegisterPostalCode"
-        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/editTextStreet"
         android:inputType="textPostalAddress"
-        />
+        android:text="Mieszkania"
+        app:layout_constraintBottom_toTopOf="@+id/editTextRegisterFlatNumber"
+        app:layout_constraintStart_toStartOf="@+id/editTextRegisterFlatNumber"
+        app:layout_constraintTop_toBottomOf="@+id/editTextStreet"
+        app:layout_constraintVertical_bias="1.0" />
+
     <EditText
-        android:layout_width="100dp"
+        android:id="@+id/editTextRegisterFlatNumber"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewRegisterPostalCode"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
         android:background="@color/colorWhite"
-        android:id="@+id/editTextRegisterPostalCode"
+        android:hint="Mieszk."
         android:inputType="number"
-        android:layout_marginLeft="20dp"
-        android:textSize="20sp"
         android:paddingLeft="5dp"
-        />
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextStreet" />
+
     <TextView
+        android:id="@+id/textViewRegisterFlatNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register_city"
-        android:layout_marginTop="15dp"
+        android:layout_below="@+id/editTextStreet"
+        android:layout_toRightOf="@+id/editTextRegisterFlatNumber"
+        android:inputType="textPostalAddress"
+        android:text="@string/register_postal_code"
+        app:layout_constraintBottom_toTopOf="@+id/editTextRegisterPostalCode"
+        app:layout_constraintStart_toStartOf="@+id/editTextRegisterPostalCode"
+        app:layout_constraintTop_toBottomOf="@+id/editTextStreet"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editTextRegisterPostalCode"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewRegisterPostalCode"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        android:layout_toRightOf="@+id/editTextRegisterFlatNumber"
+        android:background="@color/colorWhite"
+        android:inputType="number"
+        android:paddingLeft="5dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/editTextRegisterCityName"
+        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintStart_toEndOf="@+id/editTextRegisterFlatNumber"
+        app:layout_constraintTop_toBottomOf="@+id/editTextStreet" />
+
+    <TextView
         android:id="@+id/textViewRegisterCityName"
-        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/editTextStreet"
         android:layout_toRightOf="@+id/editTextRegisterPostalCode"
-        />
+        android:text="@string/register_city"
+        app:layout_constraintBottom_toTopOf="@+id/editTextRegisterCityName"
+        app:layout_constraintStart_toStartOf="@+id/editTextRegisterCityName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextStreetNumber"
+        app:layout_constraintVertical_bias="1.0" />
+
     <EditText
+        android:id="@+id/editTextRegisterCityName"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:hint="Miasto"
         android:layout_below="@id/textViewRegisterCityName"
-        android:background="@color/colorWhite"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="20dp"
         android:layout_toRightOf="@+id/editTextRegisterPostalCode"
-        android:layout_marginLeft="20dp"
+        android:background="@color/colorWhite"
+        android:hint="@string/register_city"
         android:inputType="textCapWords"
-        android:textSize="20sp"
         android:paddingLeft="5dp"
-        />
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextStreetNumber" />
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/email"
-        android:layout_marginTop="15dp"
         android:id="@+id/textViewRegisterEMail"
-        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/editTextRegisterPostalCode"
-        />
+        android:text="@string/email"
+        app:layout_constraintBottom_toTopOf="@+id/editTextRegisterEmail"
+        app:layout_constraintStart_toStartOf="@+id/editTextRegisterEmail"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRegisterPostalCode"
+        app:layout_constraintVertical_bias="1.0" />
+
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/email"
-        android:layout_below="@id/textViewRegisterEMail"
         android:id="@+id/editTextRegisterEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewRegisterEMail"
+        android:layout_marginTop="20dp"
         android:background="@color/colorWhite"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:textSize="20sp"
         android:paddingLeft="5dp"
-        />
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRegisterPostalCode"
+        tools:layout_editor_absoluteX="-20dp" />
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/register_password"
-        android:layout_marginTop="15dp"
         android:id="@+id/textViewPassword"
-        android:layout_marginLeft="20dp"
-        android:layout_below="@+id/editTextRegisterEmail"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/register_password"
-        android:id="@+id/editTextRegisterPassword1"
-        android:layout_below="@+id/textViewPassword"
-        android:inputType="textPassword"
-        android:background="@color/colorWhite"
-        android:textSize="20sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:paddingLeft="5dp"
-        />
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register_password_repeat"
-        android:layout_marginTop="15dp"
-        android:id="@+id/textViewRegisterPasswordRepeat"
-        android:layout_marginLeft="20dp"
-        android:layout_below="@+id/editTextRegisterPassword1"
-        />
+        android:layout_below="@+id/editTextRegisterEmail"
+        android:layout_marginBottom="24dp"
+        android:text="@string/register_password"
+        app:layout_constraintBottom_toTopOf="@+id/textViewRegisterPasswordRepeat"
+        app:layout_constraintStart_toStartOf="@+id/editTextRegisterPassword1"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRegisterEmail"
+        app:layout_constraintVertical_bias="0.333" />
+
     <EditText
+        android:id="@+id/editTextRegisterPassword1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/register_password_repeat"
-        android:id="@+id/editTextRegisterPassword2"
-        android:layout_below="@+id/textViewRegisterPasswordRepeat"
-        android:inputType="textPassword"
+        android:layout_below="@+id/textViewPassword"
+        android:layout_marginTop="20dp"
         android:background="@color/colorWhite"
+        android:hint="@string/register_password"
+        android:inputType="textPassword"
         android:paddingLeft="5dp"
         android:layout_marginLeft="20dp"
-        android:textSize="20sp"
         android:layout_marginRight="20dp"
-        />
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRegisterEmail"
+        tools:layout_editor_absoluteX="16dp" />
+
+    z<TextView
+        android:id="@+id/textViewRegisterPasswordRepeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextRegisterPassword1"
+        android:layout_marginBottom="1dp"
+        android:text="@string/register_password_repeat"
+        app:layout_constraintBottom_toTopOf="@+id/editTextRegisterPassword2"
+        app:layout_constraintStart_toStartOf="@+id/editTextRegisterPassword2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRegisterPassword1" />
+
+    <EditText
+        android:id="@+id/editTextRegisterPassword2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewRegisterPasswordRepeat"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorWhite"
+        android:hint="@string/register_password_repeat"
+        android:inputType="textPassword"
+        android:paddingLeft="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRegisterPassword1" />
+
     <Button
+        android:id="@+id/buttonRegisterConfirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextRegisterPassword2"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"
-        android:textColor="@color/colorWhite"
-        android:text="@string/register_button_submit"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="44dp"
         android:background="@color/colorBlue"
+        android:text="@string/register_button_submit"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        />
-</RelativeLayout>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRegisterPassword2"
+        tools:layout_editor_absoluteX="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

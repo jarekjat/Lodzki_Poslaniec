@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "756112403636",
+    "firebase_url": "https://lodzki-poslaniec.firebaseio.com",
+    "project_id": "lodzki-poslaniec",
+    "storage_bucket": "lodzki-poslaniec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756112403636:android:934e17ad68d60fb763fbe1",
+        "android_client_info": {
+          "package_name": "com.example.LodzkiPoslaniec"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "756112403636-6493tqmphtl5dqb4anmf4bdfrnq2dvtu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0U2EvBiJubLWRlYtwn443o5acvwhO-u0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "756112403636-6493tqmphtl5dqb4anmf4bdfrnq2dvtu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

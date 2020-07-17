@@ -1,7 +1,6 @@
 package com.example.LodzkiPoslaniec
 
 import android.Manifest
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -13,10 +12,22 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import java.lang.reflect.Array
+enum class EVENTTYPE{
+    POTHOLE,
+    DAMAGED_INFRASTRUCTURE,
+    CLEANING_REQUEST,
+    EMPTY;
+    fun getName(number:Int){
+        //var name: String? = null
+            name.toLowerCase().capitalize()
 
+    }
+}
+const val typeName:String = "type"
 class InfrastructureActivity : AppCompatActivity() {
+
     private var buttonCall: Button? = null
+    private var buttonReportAPotHole: Button? = null
     private var CALL_REQUEST_CODE = 1
     val permissionArray = Array(1) {Manifest.permission.CALL_PHONE}
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,8 +38,14 @@ class InfrastructureActivity : AppCompatActivity() {
     }
     fun initWidgets(){
         buttonCall = findViewById(R.id.buttonInfrastructureCall)
+        buttonReportAPotHole = findViewById(R.id.buttonInfrastructureReportAPotHole)
     }
     fun setOnClickListener(){
+        buttonReportAPotHole?.setOnClickListener(View.OnClickListener {
+            val reportIntent = Intent(this,GetLocationActivity::class.java)
+            reportIntent.putExtra(typeName,EVENTTYPE.POTHOLE)
+            startActivity(reportIntent)
+        })
         buttonCall?.setOnClickListener(View.OnClickListener {
             val callIntent: Intent = Intent(Intent.ACTION_CALL)
             callIntent.setData(Uri.parse("tel:+48426384444"))
@@ -63,12 +80,12 @@ class InfrastructureActivity : AppCompatActivity() {
     fun requestCallPermission(){
         if(ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.CALL_PHONE)){
             AlertDialog.Builder(this)
-                .setTitle("Permission needed")
-                .setMessage("Zgoda jest potrzebna, aby wykonać połączenie telefoniczne. Zostaniesz połączony z miejskim call center")
+                .setTitle(R.string.call_permission_request_title)
+                .setMessage(R.string.call_permission_request)
                 .setPositiveButton("OK") { dialog, whichButton->
                     ActivityCompat.requestPermissions(this,permissionArray,CALL_REQUEST_CODE)
                 }
-                .setNegativeButton("Cancel"){dialog,whichButton->
+                .setNegativeButton(R.string.cancel){dialog,whichButton->
                     dialog.dismiss()
                    // ActivityCompat.requestPermissions(this,permissionArray,CALL_REQUEST_CODE)
                 }
